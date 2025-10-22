@@ -170,8 +170,8 @@ If successful, your CUDA-compatible GPU will be recognized by TensorFlow.
 
 below are the results for training the Base Model : 
 
-<img src="figures\loss.png" width="30%" style="position: relative; top: 0; right: 0;" alt="Loss over epochs"/>
-<img src="figures\accuracy.png" width="30%" style="position: relative; top: 0; right: 0;" alt="Accuracy over epochs"/>
+<img src="Results\figures\loss.png" width="30%" style="position: relative; top: 0; right: 0;" alt="Loss over epochs"/>
+<img src="Results\figures\accuracy.png" width="30%" style="position: relative; top: 0; right: 0;" alt="Accuracy over epochs"/>
 
 And these are the generation metrics : 
 ```json
