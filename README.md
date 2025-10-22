@@ -1,25 +1,18 @@
-<div id="top">
+<div id="top" align="left">
 
-<!-- HEADER STYLE: CLASSIC -->
-<div align="left">
+<img src="AntibioticGeneration.png" width="30%" alt="Project Logo"/>
 
-<img src="AntibioticGeneration.png" width="30%" style="position: relative; top: 0; right: 0;" alt="Project Logo"/>
+# 🧫 ANTIBIOTICGENERATION  
+*Revolutionizing Antibiotics Through Intelligent Molecular Innovation*
 
-# ANTIBIOTICGENERATION
+---
 
-<em>Revolutionizing Antibiotics Through Intelligent Molecular Innovation</em>
-
-<!-- BADGES -->
-<img src="https://img.shields.io/github/last-commit/0m4r1o/AntibioticGeneration?style=flat&logo=git&logoColor=white&color=0080ff" alt="last-commit">
-<img src="https://img.shields.io/github/languages/top/0m4r1o/AntibioticGeneration?style=flat&color=0080ff" alt="repo-top-language">
-<img src="https://img.shields.io/github/languages/count/0m4r1o/AntibioticGeneration?style=flat&color=0080ff" alt="repo-language-count">
-
-<em>Built with the tools and technologies:</em>
+### 🧩 Built With
 
 <img src="https://img.shields.io/badge/Markdown-000000.svg?style=flat&logo=Markdown&logoColor=white" alt="Markdown">
 <img src="https://img.shields.io/badge/Keras-D00000.svg?style=flat&logo=Keras&logoColor=white" alt="Keras">
 <img src="https://img.shields.io/badge/TensorFlow-FF6F00.svg?style=flat&logo=TensorFlow&logoColor=white" alt="TensorFlow">
-<img src="https://img.shields.io/badge/scikitlearn-F7931E.svg?style=flat&logo=scikit-learn&logoColor=white" alt="scikitlearn">
+<img src="https://img.shields.io/badge/scikit--learn-F7931E.svg?style=flat&logo=scikit-learn&logoColor=white" alt="scikit-learn">
 <img src="https://img.shields.io/badge/tqdm-FFC107.svg?style=flat&logo=tqdm&logoColor=black" alt="tqdm">
 <img src="https://img.shields.io/badge/Rich-FAE742.svg?style=flat&logo=Rich&logoColor=black" alt="Rich">
 <br>
@@ -30,108 +23,147 @@
 <img src="https://img.shields.io/badge/OpenAI-412991.svg?style=flat&logo=OpenAI&logoColor=white" alt="OpenAI">
 <img src="https://img.shields.io/badge/Pydantic-E92063.svg?style=flat&logo=Pydantic&logoColor=white" alt="Pydantic">
 
-</div>
 <br>
 
 ---
 
-## Table of Contents
+## 📚 Table of Contents
 
 - [Overview](#overview)
 - [Getting Started](#getting-started)
-    - [Prerequisites](#prerequisites)
-    - [Installation](#installation)
-    - [Usage](#usage)
-    - [Testing](#testing)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+  - [Usage](#usage)
+  - [Testing](#testing)
+- [Return to Top](#top)
 
 ---
 
-## Overview
+## 🧠 Overview
 
-AntibioticGeneration is a comprehensive developer toolset aimed at advancing antibiotic discovery through computational methods. It integrates molecular filtering, similarity assessment, and deep learning-based molecule generation to streamline the identification of promising drug candidates.
+**AntibioticGeneration** is a comprehensive developer framework designed to accelerate antibiotic discovery through computational chemistry and deep learning.  
+It combines molecular filtering, similarity scoring, and neural generation models to efficiently identify and refine promising antibiotic candidates.
 
-**Why AntibioticGeneration?**
+### 💡 Why AntibioticGeneration?
 
-This project leverages cheminformatics and machine learning to facilitate the design, analysis, and optimization of antibiotics. The core features include:
+This project unites **cheminformatics** and **machine learning** to optimize antibiotic design and evaluation.  
+Its key features include:
 
-- 🧬 **🔍 Molecular Filtering:** Filters molecules based on Lipinski's rules, validity, and uniqueness, ensuring high-quality candidates.
-- 🧪 **⚙️ Similarity Assessment:** Provides scaffold-aware and fingerprint-based similarity metrics for nuanced compound comparison.
-- 🧠 **🧬 Deep Learning Models:** Uses LSTM architectures to generate and optimize novel molecular structures.
-- 💻 **🚀 GPU Verification:** Checks hardware readiness to maximize performance during model training and inference.
-- 🔄 **🔧 Iterative Retraining:** Automates model refinement by selecting top molecules and retraining for continuous improvement.
+- 🧬 **Molecular Filtering:** Enforces Lipinski’s rules, removes invalid or duplicate SMILES, and selects viable drug-like compounds.  
+- 🧪 **Similarity Assessment:** Incorporates scaffold-based and fingerprint similarity metrics for better chemical comparison.  
+- 🤖 **Deep Learning Models:** Trains LSTM architectures to generate and evolve novel molecular structures.  
+- ⚙️ **GPU Verification:** Validates CUDA setup and GPU readiness for model training and inference.  
+- 🔁 **Iterative Retraining:** Automatically refines the model using top-performing molecules for continuous improvement.
 
 ---
 
-## Getting Started
+## 🚀 Getting Started
 
-### Prerequisites
+### 🧩 Prerequisites
 
-This project requires the following dependencies:
+Ensure the following are installed:
 
-- **Programming Language:** Python
-- **Package Manager:** Pip
+- **Python 3.9+**
+- **pip** or **conda**
 
-### Installation
+---
 
-Build AntibioticGeneration from the source and install dependencies:
+### ⚙️ Installation
 
-1. **Clone the repository:**
+Clone and set up the project:
 
-    ```sh
-    ❯ git clone https://github.com/0m4r1o/AntibioticGeneration
-    ```
-
-2. **Navigate to the project directory:**
-
-    ```sh
-    ❯ cd AntibioticGeneration
-    ```
-
-3. **Install the dependencies:**
-
-**Using [pip](https://pypi.org/project/pip/):**
-
-```sh
-❯ pip install -r requirements.txt
+```bash
+git clone https://github.com/0m4r1o/AntibioticGeneration
+cd AntibioticGeneration
+pip install -r requirements.txt
 ```
 
-### Usage
+---
 
-Run the project with:
+### ▶️ Usage
 
-**Using [pip](https://pypi.org/project/pip/):**
+#### Step 1 — Train the Base Model
+Ensure your dataset `all_smiles_clean.smi` is available.  
+Open **LSTMSMILES.py** and set:
 
-In order to Start the pipeline make sure to have the data **all_smiles_clean.smi** and begin with :
-
-```sh
-python LSTMSMILES.py
-```
-with 
 ```python
 Train = True
 ```
-This will choose the best LSTM arch model after training each one of them for **20** Epochs. After choosing the best arch the model will train for **100** epochs.
-After finishing the script will generate a folder **\Results\Models\smiles_lstm_bn_ckpt_{GENERATION}\**. After that you must run the same program but with 
+
+Then run:
+```bash
+python LSTMSMILES.py
+```
+
+This will:
+- Test multiple LSTM architectures for **20 epochs** each.
+- Train the best-performing model for **100 epochs**.
+- Save the trained model in  
+  `Results/Models/smiles_lstm_bn_ckpt_{GENERATION}/`
+
+---
+
+#### Step 2 — Generate Molecules
+After training completes, switch:
+
 ```python
 Train = False
 ```
-In order to generate a sample of molecules (set to 1200 currently). The script will save the results here **\Results\Generation\SMILES_gen_0.smi** (for generation 0 for example). After that you can run the script FilterSmiles.py to filter the 1200 SMILES (remove invalids, duplicates and Lipinski & SAS violations and calculates the Simulation Score for each SMILES.
-```sh
+
+Run:
+```bash
+python LSTMSMILES.py
+```
+
+This generates ~1200 molecules and saves them in:
+```
+Results/Generation/SMILES_gen_0.smi
+```
+
+---
+
+#### Step 3 — Filter Molecules
+Run:
+```bash
 python FilterSmiles.py
 ```
-The script will save an excel file in **Results/Curated/scores_output_gen_{generation}.xlsx**. Then run the Script **RetrainModel.py** which will take the best 100 and retrain the model through transfer learning and will output a new model **\Results\Models\smiles_lstm_bn_ckpt_{NEXTGENERATION}\**.
-```sh
+
+This filters invalid or duplicate SMILES, applies Lipinski and SAS checks,  
+and saves the curated results to:
+```
+Results/Curated/scores_output_gen_{generation}.xlsx
+```
+
+---
+
+#### Step 4 — Retrain with Top Molecules
+Finally, retrain the model on the best 100 molecules:
+
+```bash
 python RetrainModel.py
 ```
 
-
-### Testing
-To test the GPU make sure to have the requirements installed, and run the following : 
-```sh
-python testgpu.py
+The new fine-tuned model will be saved in:
 ```
+Results/Models/smiles_lstm_bn_ckpt_{NEXTGENERATION}/
+```
+
 ---
 
-<div align="left"><a href="#top">⬆ Return</a></div>
+### 🧪 Testing
+
+To verify GPU setup:
+
+```bash
+python testgpu.py
+```
+
+If successful, your CUDA-compatible GPU will be recognized by TensorFlow.
+
+---
+
+<div align="left">
+  <a href="#top">⬆ Back to Top</a>
+</div>
 
 ---
