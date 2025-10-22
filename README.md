@@ -1,18 +1,26 @@
-<div id="top" align="left">
+Can you change the instructions that are below to be better readable
+<div id="top">
 
-<img src="AntibioticGeneration.png" width="30%" alt="Project Logo"/>
+<!-- HEADER STYLE: CLASSIC -->
+<div align="left">
 
-# 🧫 ANTIBIOTICGENERATION  
-*Revolutionizing Antibiotics Through Intelligent Molecular Innovation*
+<img src="antibiotics.png" width="30%" style="position: relative; top: 0; right: 0;" alt="Project Logo"/>
 
----
+# ANTIBIOTICGENERATION
 
-### 🧩 Built With
+<em>Revolutionizing Antibiotics Through Intelligent Molecular Innovation</em>
+
+<!-- BADGES -->
+<img src="https://img.shields.io/github/last-commit/0m4r1o/AntibioticGeneration?style=flat&logo=git&logoColor=white&color=0080ff" alt="last-commit">
+<img src="https://img.shields.io/github/languages/top/0m4r1o/AntibioticGeneration?style=flat&color=0080ff" alt="repo-top-language">
+<img src="https://img.shields.io/github/languages/count/0m4r1o/AntibioticGeneration?style=flat&color=0080ff" alt="repo-language-count">
+
+<em>Built with the tools and technologies:</em>
 
 <img src="https://img.shields.io/badge/Markdown-000000.svg?style=flat&logo=Markdown&logoColor=white" alt="Markdown">
 <img src="https://img.shields.io/badge/Keras-D00000.svg?style=flat&logo=Keras&logoColor=white" alt="Keras">
 <img src="https://img.shields.io/badge/TensorFlow-FF6F00.svg?style=flat&logo=TensorFlow&logoColor=white" alt="TensorFlow">
-<img src="https://img.shields.io/badge/scikit--learn-F7931E.svg?style=flat&logo=scikit-learn&logoColor=white" alt="scikit-learn">
+<img src="https://img.shields.io/badge/scikitlearn-F7931E.svg?style=flat&logo=scikit-learn&logoColor=white" alt="scikitlearn">
 <img src="https://img.shields.io/badge/tqdm-FFC107.svg?style=flat&logo=tqdm&logoColor=black" alt="tqdm">
 <img src="https://img.shields.io/badge/Rich-FAE742.svg?style=flat&logo=Rich&logoColor=black" alt="Rich">
 <br>
@@ -23,37 +31,35 @@
 <img src="https://img.shields.io/badge/OpenAI-412991.svg?style=flat&logo=OpenAI&logoColor=white" alt="OpenAI">
 <img src="https://img.shields.io/badge/Pydantic-E92063.svg?style=flat&logo=Pydantic&logoColor=white" alt="Pydantic">
 
+</div>
 <br>
 
 ---
 
-## 📚 Table of Contents
+## Table of Contents
 
 - [Overview](#overview)
 - [Getting Started](#getting-started)
-  - [Prerequisites](#prerequisites)
-  - [Installation](#installation)
-  - [Usage](#usage)
-  - [Testing](#testing)
-- [Return to Top](#top)
+    - [Prerequisites](#prerequisites)
+    - [Installation](#installation)
+    - [Usage](#usage)
+    - [Testing](#testing)
 
 ---
 
-## 🧠 Overview
+## Overview
 
-**AntibioticGeneration** is a comprehensive developer framework designed to accelerate antibiotic discovery through computational chemistry and deep learning.  
-It combines molecular filtering, similarity scoring, and neural generation models to efficiently identify and refine promising antibiotic candidates.
+AntibioticGeneration is a comprehensive developer toolset aimed at advancing antibiotic discovery through computational methods. It integrates molecular filtering, similarity assessment, and deep learning-based molecule generation to streamline the identification of promising drug candidates.
 
-### 💡 Why AntibioticGeneration?
+**Why AntibioticGeneration?**
 
-This project unites **cheminformatics** and **machine learning** to optimize antibiotic design and evaluation.  
-Its key features include:
+This project leverages cheminformatics and machine learning to facilitate the design, analysis, and optimization of antibiotics. The core features include:
 
-- 🧬 **Molecular Filtering:** Enforces Lipinski’s rules, removes invalid or duplicate SMILES, and selects viable drug-like compounds.  
-- 🧪 **Similarity Assessment:** Incorporates scaffold-based and fingerprint similarity metrics for better chemical comparison.  
-- 🤖 **Deep Learning Models:** Trains LSTM architectures to generate and evolve novel molecular structures.  
-- ⚙️ **GPU Verification:** Validates CUDA setup and GPU readiness for model training and inference.  
-- 🔁 **Iterative Retraining:** Automatically refines the model using top-performing molecules for continuous improvement.
+- 🧬 **🔍 Molecular Filtering:** Filters molecules based on Lipinski's rules, validity, and uniqueness, ensuring high-quality candidates.
+- 🧪 **⚙️ Similarity Assessment:** Provides scaffold-aware and fingerprint-based similarity metrics for nuanced compound comparison.
+- 🧠 **🧬 Deep Learning Models:** Uses LSTM architectures to generate and optimize novel molecular structures.
+- 💻 **🚀 GPU Verification:** Checks hardware readiness to maximize performance during model training and inference.
+- 🔄 **🔧 Iterative Retraining:** Automates model refinement by selecting top molecules and retraining for continuous improvement.
 
 ---
 
@@ -157,8 +163,24 @@ To verify GPU setup:
 ```bash
 python testgpu.py
 ```
-
 If successful, your CUDA-compatible GPU will be recognized by TensorFlow.
+
+
+### Results
+
+below are the results for training the Base Model : 
+
+<img src="figures\loss.png" width="30%" style="position: relative; top: 0; right: 0;" alt="Loss over epochs"/>
+<img src="figures\accuracy.png" width="30%" style="position: relative; top: 0; right: 0;" alt="Accuracy over epochs"/>
+
+And these are the generation metrics : 
+```json
+{
+  "Validity":97.40,
+  "Uniqueness":99.17
+}
+
+```
 
 ---
 
