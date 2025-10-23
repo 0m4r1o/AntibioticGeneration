@@ -1,0 +1,58 @@
+version: "3.9"
+
+services:
+  gptmol:
+    build: .
+    image: gptmol:latest
+    container_name: gptmol
+    # Mount your working folders so results persist on host
+    volumes:
+      - ./data:/app/data
+      - ./figures:/app/figures
+      - ./Results:/app/Results
+      # If your code lives outside these, also mount repo root:
+      # - ./:/app
+    environment:
+      # mirror the defaults in your scripts; change as needed
+      TF_CPP_MIN_LOG_LEVEL: "1"
+      TF_ENABLE_ONEDNN_OPTS: "0"
+      OMP_NUM_THREADS: "1"
+      MKL_NUM_THREADS: "1"
+    # For interactive work; override with 'command:' when you want to run scripts
+    tty: true
+    stdin_open: true
+    # Enable GPU if you have NVIDIA drivers + nvidia-container-toolkit installed:
+    # gpus: all
+
+  # Example: run the TensorFlow LSTM trainer (edit Train flag inside the script)
+  train_lstm:
+    image: gptmol:latest
+    depends_on: [gptmol]
+    volumes:
+      - ./data:/app/data
+      - ./figures:/app/figures
+      - ./Results:/app/Results
+    command: >
+      bash -lc "python LSTMSMILES.py"
+
+  # Example: run your filtering/metrics pass after generation
+  filter_curate:
+    image: gptmol:latest
+    depends_on: [gptmol]
+    volumes:
+      - ./data:/app/data
+      - ./figures:/app/figures
+      - ./Results:/app/Results
+    command: >
+      bash -lc "python FilterSmiles.py"
+
+  # Optional: a similarity scoring job (uses RDKit + your scaffold-aware metric)
+  similarity_score:
+    image: gptmol:latest
+    depends_on: [gptmol]
+    volumes:
+      - ./data:/app/data
+      - ./figures:/app/figures
+      - ./Results:/app/Results
+    command: >
+      bash -lc "python SimilarityMoles.py"
